@@ -122,7 +122,7 @@ const MainFooter: React.FC = () => {
       </div>
 
       {/* Footer Bottom */}
-     <div className="container footer__bottom reveal-on-scroll">
+    div className="container footer__bottom">
         <p>
           Copyright 2026 &copy; RUMAX LIMITED 2026, trading as RUMAX LIMITED, registered in England and Wales at Cornwallis
           House, Unit 2, Howard Chase, Basildon, Essex, SS14 3BB, United Kingdom Registered No: 7468421 ICO Registration Nr:
