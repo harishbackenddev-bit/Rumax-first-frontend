@@ -3134,10 +3134,10 @@ button {
 }
 
 @media (max-width: 700px) {
-  .careers-page .process-timeline,
+  /* .careers-page .process-timeline,
   .careers-page .job-card-grid {
     grid-template-columns: 1fr;
-  }
+  } */
 
   .careers-page .process-timeline article {
     justify-items: start;
