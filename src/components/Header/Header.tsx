@@ -36,22 +36,17 @@ const Header = () => {
     return location.pathname === path;
   };
 
+  // Toggle dropdown
+  const toggleDropdown = () => {
+    setActiveDropdown(activeDropdown === 'services' ? null : 'services');
+  };
+
   // Social media links with proper attributes
   const socialLinks = [
     { label: "Facebook", icon: "rumax-facebook.svg", url: "https://facebook.com" },
     { label: "Instagram", icon: "rumax-instagram.svg", url: "https://instagram.com" },
     { label: "LinkedIn", icon: "rumax-linkedin.svg", url: "https://linkedin.com" },
     { label: "X", icon: "rumax-twitter.svg", url: "https://x.com" },
-  ];
-
-  // Navigation items in the correct order
-  const navItems = [
-    { label: "Home", path: "/" },
-    { label: "Services", path: "/services" },
-    { label: "Funding & Cost", path: "/pricing-and-funding" },
-    { label: "About Us", path: "/about-us" },
-    { label: "Careers", path: "/careers" },
-    { label: "Contact Us", path: "/contact-us" },
   ];
 
   // Dropdown items for Services
@@ -119,9 +114,7 @@ const Header = () => {
             <span className="sr-only">Open navigation</span>
           </button>
 
-          {/* ✅ Fixed: Changed 'open' to 'is-open' to match working HTML */}
           <nav className={`primary-nav ${isMobileMenuOpen ? 'is-open' : ''}`} id="primary-nav" aria-label="Main navigation">
-            {/* Home */}
             <Link 
               to="/" 
               className={isActiveLink('/') ? 'active' : ''}
@@ -133,16 +126,31 @@ const Header = () => {
             {/* Services with Dropdown */}
             <div className="nav-dropdown">
               <button 
-                className={`nav-dropdown__trigger nav-with-icon ${isActiveLink('/services') ? 'active' : ''}`}
+                className="nav-dropdown__trigger nav-with-icon" 
                 type="button" 
                 aria-expanded={activeDropdown === 'services'} 
                 aria-controls="services-menu"
-                onClick={() => setActiveDropdown(activeDropdown === 'services' ? null : 'services')}
+                onClick={toggleDropdown}
               >
                 Services
-                <img src="/assets/figma-exported/rumax-nav-arrow.svg" alt="" aria-hidden="true" />
+                <img 
+                  src="/assets/figma-exported/rumax-nav-arrow.svg" 
+                  alt="" 
+                  aria-hidden="true"
+                  style={{ 
+                    transform: activeDropdown === 'services' ? 'rotate(180deg)' : 'rotate(0deg)',
+                    transition: 'transform 0.3s ease'
+                  }}
+                />
               </button>
-              <div className={`nav-dropdown__menu ${activeDropdown === 'services' ? 'open' : ''}`} id="services-menu" role="menu">
+              <div 
+                className={`nav-dropdown__menu ${activeDropdown === 'services' ? 'open' : ''}`} 
+                id="services-menu" 
+                role="menu"
+                style={{
+                  display: activeDropdown === 'services' ? 'block' : 'none'
+                }}
+              >
                 {dropdownItems.map((item) => (
                   <Link 
                     key={item.path}
@@ -156,7 +164,6 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Funding & Cost */}
             <Link 
               to="/pricing-and-funding" 
               className={isActiveLink('/pricing-and-funding') ? 'active' : ''}
@@ -165,7 +172,6 @@ const Header = () => {
               Funding &amp; Cost
             </Link>
 
-            {/* About Us */}
             <Link 
               to="/about-us" 
               className={isActiveLink('/about-us') ? 'active' : ''}
@@ -174,7 +180,6 @@ const Header = () => {
               About Us
             </Link>
 
-            {/* Careers */}
             <Link 
               to="/careers" 
               className={isActiveLink('/careers') ? 'active' : ''}
@@ -183,7 +188,6 @@ const Header = () => {
               Careers
             </Link>
 
-            {/* Contact Us */}
             <Link 
               to="/contact-us" 
               className={isActiveLink('/contact-us') ? 'active' : ''}
