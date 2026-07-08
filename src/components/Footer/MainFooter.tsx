@@ -121,22 +121,22 @@ const MainFooter: React.FC = () => {
         </div>
       </div>
 
-      {/* Footer Bottom */}
-    div className="container footer__bottom">
-        <p>
-          Copyright 2026 &copy; RUMAX LIMITED 2026, trading as RUMAX LIMITED, registered in England and Wales at Cornwallis
-          House, Unit 2, Howard Chase, Basildon, Essex, SS14 3BB, United Kingdom Registered No: 7468421 ICO Registration Nr:
-          ZA038243 "Your Care, Our Commitment"
-        </p>
-        <div className="footer-badges" aria-label="Rumax accreditation badges">
-          <img src={asset("rumax-footer-eca.png")} alt="ECA" />
-          <img src={asset("rumax-footer-cqc.png")} alt="CQC" />
-          <img src={asset("rumax-footer-ico.png")} alt="ICO" />
-          <img src={asset("rumax-footer-nhs.png")} alt="NHS" />
-          <img src={asset("rumax-footer-iso.png")} alt="ISO" />
-          <img src={asset("rumax-footer-cyber.png")} alt="Cyber Essentials" />
-        </div>
-      </div>
+              {/* Footer Bottom */}
+             <div className="container footer__bottom">
+                <p>
+                  Copyright 2026 &copy; RUMAX LIMITED 2026, trading as RUMAX LIMITED, registered in England and Wales at Cornwallis
+                  House, Unit 2, Howard Chase, Basildon, Essex, SS14 3BB, United Kingdom Registered No: 7468421 ICO Registration Nr:
+                  ZA038243 "Your Care, Our Commitment"
+                </p>
+                <div className="footer-badges" aria-label="Rumax accreditation badges">
+                  <img src={asset("rumax-footer-eca.png")} alt="ECA" />
+                  <img src={asset("rumax-footer-cqc.png")} alt="CQC" />
+                  <img src={asset("rumax-footer-ico.png")} alt="ICO" />
+                  <img src={asset("rumax-footer-nhs.png")} alt="NHS" />
+                  <img src={asset("rumax-footer-iso.png")} alt="ISO" />
+                  <img src={asset("rumax-footer-cyber.png")} alt="Cyber Essentials" />
+                </div>
+              </div>
     </footer>
   );
 };
