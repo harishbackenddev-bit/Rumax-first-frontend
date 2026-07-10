@@ -3,6 +3,7 @@ import { CareCta } from "@/components/common/CareCta";
 import { FormInputField, FormTextareaField } from "@/components/pages/PageFormControls";
 import { InnerHero, PageIcon, PageShell } from "@/components/pages/InnerPages";
 import { asset, locationCards } from "@/data/site";
+import { Link, useLocation } from "react-router-dom";
 
 // Types
 type ReferralFormStep = {
@@ -319,9 +320,9 @@ const ReferralPage = () => {
               </a>
             ))}
           </div>
-          <a className="button-primary locations__button" href="/locations">
+          <Link className="button-primary locations__button" href="/locations">
             View All Locations
-          </a>
+          </Link>
         </div>
       </section>
 
